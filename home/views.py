@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from home.models import Login
+from django.contrib import messages
 
 
 def index(request):
@@ -15,7 +16,11 @@ def login(request):
         age = request.POST.get('age')
         login = Login(name=name,address=address,age=age,phone=phone)
         login.save()
+        messages.success(request,"profile updated successfully")
     return render(request, 'login_page.html')
+
+
+
 
 def signup(request):
     return render(request, 'signup_page.html')

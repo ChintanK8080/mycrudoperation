@@ -1,24 +1,11 @@
 {% extends 'base.html' %}
-{% block heading %} first  page {% endblock heading %}
-{% block body %}
-<form method="post" action="/login">
-{% csrf_token %}  
-    <div class="container" style="width:50%; margin: 0 auto; border: none;">   
-        <label>name : </label>   
-        <input type="text" placeholder="Enter Your name" id="name" name="name" required >  
-        <label>Password : </label>   
-        <input type="text" placeholder="Enter Password" id="password" name="password" required>
-        <label>phone : </label>   
-        <input type="text" placeholder="Enter Phone Number" name="phone" required> 
-        <label>age : </label>
-        <input type="text" placeholder="Enter age" id="age" name="age" required>
-        <label>address : </label>   
-        <input type="text" placeholder="Enter address" id="address" name="address" required>
-        <label>gender : </label>   
-        <input type="text" placeholder="Enter gender" id="gender" name="gender" required>
-        <button type="submit">Login</button>   
-        <input type="checkbox" checked="checked"> Remember me   
-        <button type="button" class="cancelbtn"> Cancel</button>   
-        Forgot <a href="#"> password? </a>   
-    </div>   
-</form>{% endblock body %}
+{% block title %}welcome{% endblock title %}
+{% block body%}
+<p>
+hello welcome to our website im chintan khutwad i made this website for learing django this is my first django website 
+</p>
+<a href="/login">
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary" type="button">Next</button>
+  </div></a>
+{%endblock body%}
