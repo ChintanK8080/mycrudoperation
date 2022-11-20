@@ -1,6 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-    <body>this is signup page</body>
-</html>
+{% extends 'base.html' %}
+{% block title %} Signup {% endblock title %}
+{% block body %}
+<style>   
+    Body {  
+      font-family: Calibri, Helvetica, sans-serif;  
+      background-color: white;  
+    }  
+    button {   
+           background-color: rgb(13, 13, 59);   
+           width: 100%;  
+            color: white;   
+            padding: 15px;   
+            margin: 10px 0px;   
+            border: none;   
+            cursor: pointer;   
+             }     
+     input[type=text], input[type=password] {   
+            width: 100%;   
+            margin: 8px 0;  
+            padding: 12px 20px;   
+            display: inline-block;   
+            border: 2px solid rgb(13, 13, 59);   
+            box-sizing: border-box;   
+        }  
+     button:hover {   
+            opacity: 0.7;   
+        }   
+      .cancelbtn {   
+            width: auto;   
+           
+        }
+            
+         
+  
+    </style>
+<div style="width:70%; margin: 0 auto; border: none;" class="container" >
+<form method="post" action="/login" style="width:70%; margin: 0 auto; border: none;">
+{% csrf_token %} 
+    <div style="margin: 0 auto; border: none;">   
+        <label>name : </label>   
+        <input type="text" placeholder="Enter Your name" id="name" name="name" required >  
+        <label>Password : </label>   
+        <input type="text" placeholder="Enter Password" id="password" name="password" required>
+        <label>phone : </label>   
+        <input type="text" placeholder="Enter Phone Number" name="phone" required> 
+        <label>age : </label>
+        <input type="text" placeholder="Enter age" id="age" name="age" required>
+        <label>address : </label>   
+        <input type="text" placeholder="Enter address" id="address" name="address" required>
+        <label>gender : </label>   
+        <input type="text" placeholder="Enter gender" id="gender" name="gender" required>
+        <button type="submit">Signup</button>
+    </div>
+</form>
+<div  style="width:70%; margin: 0 auto; border: none;" class="container">
+<a href="/login">
+    <button type="submit">Login</button> 
+</a></div>
+</div>
+{% endblock body %}
