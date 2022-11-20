@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Signup {% endblock title %}
+{% block title %} Login {% endblock title %}
 {% block body %}
 <style>   
 
@@ -42,20 +42,10 @@
         <input type="text" placeholder="Enter Your name" id="name" name="name" required >  
         <label>Password : </label>   
         <input type="text" placeholder="Enter Password" id="password" name="password" required>
-        <label>phone : </label>   
-        <input type="text" placeholder="Enter Phone Number" name="phone" required> 
-        <label>age : </label>
-        <input type="text" placeholder="Enter age" id="age" name="age" required>
-        <label>address : </label>   
-        <input type="text" placeholder="Enter address" id="address" name="address" required>
-        <label>gender : </label>   
-        <input type="text" placeholder="Enter gender" id="gender" name="gender" required>
-        <button type="submit">Signup</button>
+       
+        <button type="submit">Login</button> 
     </div>
 </form>
-<div  style="width:70%; margin: 0 auto; border: none;" class="container">
-<a href="/login">
-    <button type="submit">Login</button> 
-</a></div>
+
 </div>
 {% endblock body %}
