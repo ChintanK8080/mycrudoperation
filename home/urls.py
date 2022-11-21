@@ -13,7 +13,7 @@ admin.site.index_title = "Welcome"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name = 'index'),
-    path('login', views.login, name = 'login'),
+    path('login', views.loginuser, name = 'login'),
     path('signup', views.signup, name = 'signup'),
     path('users', views.users, name = 'users'),
     # url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 

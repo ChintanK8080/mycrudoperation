@@ -1,14 +1,26 @@
+from django.contrib.auth import authenticate,login
 from django.http import HttpResponse,JsonResponse
 from django.shortcuts import render,redirect
-from home.models import Login
 from django.contrib import messages
+from home.models import Login
+
+
 
 
 def index(request):
     return render(request, 'index.html')
 
 
-def login(request):
+def loginuser(request):
+    if(request.method =='POST'):
+        name = request.POST.get('name')
+        password= request.POST.get('password')
+        user = authenticate(username=name, password=password)
+        if user is not None:
+             login(request,user)
+             return render(request,'users_page.html')
+        else:
+            return  render(request, 'login_page.html')
     return render(request, 'login_page.html')
 
 
