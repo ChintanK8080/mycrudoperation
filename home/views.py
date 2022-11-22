@@ -1,8 +1,9 @@
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,get_user_model
 from django.http import HttpResponse,JsonResponse
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from home.models import Login
+
 
 
 
@@ -40,4 +41,7 @@ def signup(request):
 
 
 def users(request):
-    return render(request, 'users_page.html')
+    User = get_user_model()
+    users = User.objects.all()
+    context = {"users":users}
+    return render(request, 'users_page.html',context)
